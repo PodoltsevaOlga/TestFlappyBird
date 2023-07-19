@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
         }
         
         ChangeScreenSize();
-        ChangeFontSize();
     }
 
     private void Start()
@@ -99,13 +98,5 @@ public class GameManager : MonoBehaviour
         float worldWidth = worldHeight * aspect;
         var localScale = Background.localScale;
         Background.localScale = new Vector3(worldWidth, localScale.y, localScale.z);
-    }
-
-    private void ChangeFontSize()
-    {
-        var rect = m_StartGameText.GetComponent<RectTransform>();
-        int fontSize = Screen.width / 40;
-        m_StartGameText.fontSize = fontSize;
-        rect.sizeDelta = new Vector2(fontSize * 15, fontSize * 2);
     }
 }
