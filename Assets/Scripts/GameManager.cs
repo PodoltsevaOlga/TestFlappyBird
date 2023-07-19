@@ -38,11 +38,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        float aspect = (float)Screen.width / (float)Screen.height;
-        float worldHeight = Camera.main.orthographicSize * 2;
-        float worldWidth = worldHeight * aspect;
-        var localScale = Background.localScale;
-        Background.localScale = new Vector3(worldWidth, localScale.y, localScale.z);
+        ChangeScreenSize();
+        ChangeFontSize();
     }
 
     private void Start()
@@ -93,5 +90,22 @@ public class GameManager : MonoBehaviour
         {
             StartGame();
         }
+    }
+
+    private void ChangeScreenSize()
+    {
+        float aspect = (float)Screen.width / (float)Screen.height;
+        float worldHeight = Camera.main.orthographicSize * 2;
+        float worldWidth = worldHeight * aspect;
+        var localScale = Background.localScale;
+        Background.localScale = new Vector3(worldWidth, localScale.y, localScale.z);
+    }
+
+    private void ChangeFontSize()
+    {
+        var rect = m_StartGameText.GetComponent<RectTransform>();
+        int fontSize = Screen.width / 40;
+        m_StartGameText.fontSize = fontSize;
+        rect.sizeDelta = new Vector2(fontSize * 15, fontSize * 2);
     }
 }

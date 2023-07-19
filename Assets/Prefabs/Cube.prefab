@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19c174b73f86a140ae2184c7a73a229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tag: LeftBorder
+  LeftBorderTag: LeftBorder
+  TopBottomBordersTag: TopBottomBorder
   m_HorizontalSpeed: 5
   m_VerticalSpeed: 2
   m_MinDistance: 2

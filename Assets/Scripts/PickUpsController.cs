@@ -23,7 +23,7 @@ public class PickUpsController : MonoBehaviour
 
     void Start()
     {
-        m_DistanceBetween = (m_CubesController.m_DistanceBetween + m_CubesController.m_SpawnRect.width) * 1.5f;
+        m_DistanceBetween = (m_CubesController.m_DistanceBetween + m_CubesController.m_SpawnRect.width / 2.0f) * 1.5f;
         
         var cam = Camera.main;
         if (cam == null)

@@ -86,6 +86,5 @@ public class Trajectory : MonoBehaviour
         m_LineRenderer.endWidth = m_MaxWidth;
         m_LineRenderer.enabled = true;
         m_LineRenderer.SetPositions(m_LinePoints.ToArray());
-        
     }
 }

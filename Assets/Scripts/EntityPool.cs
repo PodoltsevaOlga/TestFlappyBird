@@ -5,6 +5,8 @@ public class EntityPool
     private readonly List<GameObject> m_Pool = new();
     private readonly GameObject m_Prefab;
 
+    private int m_AllCount;
+
     public EntityPool(GameObject prefab)
     {
         m_Prefab = prefab;
@@ -16,6 +18,8 @@ public class EntityPool
         if (m_Pool.Count == 0)
         {
             gameObject = GameObject.Instantiate(m_Prefab, Vector3.zero, Quaternion.identity);
+            m_AllCount++;
+            gameObject.name += m_AllCount.ToString();
         }
         else
         {
@@ -29,7 +33,6 @@ public class EntityPool
 
     public void ReleaseEntity(GameObject entity)
     {
-        
         m_Pool.Add(entity);
     }
 }
